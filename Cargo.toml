@@ -3,6 +3,11 @@ name = "quick-macros"
 version = "0.1.0"
 edition = "2021"
 authors = ["sobczal"]
+license = "MIT"
+description = "Crate providing simple useful macros"
+repository = "https://github.com/sobczal2/quick-macros"
+readme = "README.md"
+keywords = ["macro", "proc-macro"]
 
 [lib]
 proc-macro = true
