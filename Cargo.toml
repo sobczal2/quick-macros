@@ -1,6 +1,6 @@
 [package]
 name = "quick-macros"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["sobczal"]
 license = "MIT"
@@ -21,3 +21,6 @@ proc-macro2 = { version = "1.0.94", optional = true }
 default = []
 full = ["derive"]
 derive = ["dep:syn", "dep:quote", "dep:proc-macro2"]
+
+[package.metadata.docs.rs]
+all-features = true
