@@ -13,14 +13,10 @@ keywords = ["macro", "proc-macro"]
 proc-macro = true
 
 [dependencies]
-syn = { version = "2.0.100", optional = true }
-quote = { version = "1.0.40", optional = true }
-proc-macro2 = { version = "1.0.94", optional = true }
-
-[features]
-default = []
-full = ["derive"]
-derive = ["dep:syn", "dep:quote", "dep:proc-macro2"]
+proc-macro-error = { version = "1.0.4" }
+syn = { version = "2.0.100" }
+quote = { version = "1.0.40" }
+proc-macro2 = { version = "1.0.94" }
 
 [package.metadata.docs.rs]
 all-features = true

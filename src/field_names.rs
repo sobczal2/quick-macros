@@ -1,4 +1,5 @@
 use proc_macro2::TokenStream;
+use proc_macro_error::abort_call_site;
 use quote::quote;
 use syn::{Data, DeriveInput, Ident};
 
@@ -8,7 +9,7 @@ pub(crate) fn field_names(input: DeriveInput) -> TokenStream {
     let fields = if let Data::Struct(data) = input.data {
         data.fields
     } else {
-        panic!("FieldNames can only be used on structs");
+        abort_call_site!("FieldNames can only be used on structs");
     };
 
     let nameof_getters = fields.iter().filter_map(|field| {

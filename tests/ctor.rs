@@ -1,24 +1,24 @@
-use quick_macros::FieldNames;
+use quick_macros::FullCtor;
 
-#[derive(FieldNames)]
+#[derive(FullCtor)]
 struct FieldNamedStruct {
     #[allow(unused)]
     field_1: i32,
 }
 
-#[derive(FieldNames)]
+#[derive(FullCtor)]
 pub struct FieldPubNamedStruct {
     #[allow(unused)]
     field_2: i32,
 }
 
-#[derive(FieldNames)]
+#[derive(FullCtor)]
 struct PubFieldNamedStruct {
     #[allow(unused)]
     pub field_3: i32,
 }
 
-#[derive(FieldNames)]
+#[derive(FullCtor)]
 pub struct PubFieldPubNamedStruct {
     #[allow(unused)]
     pub field_4: i32,
@@ -26,20 +26,24 @@ pub struct PubFieldPubNamedStruct {
 
 #[test]
 fn nameof_field_named_struct() {
-    assert_eq!(FieldNamedStruct::nameof_field_1(), "field_1");
+    let instance = FieldNamedStruct::new(10);
+    assert_eq!(instance.field_1, 10);
 }
 
 #[test]
 fn nameof_field_pub_named_struct() {
-    assert_eq!(FieldPubNamedStruct::nameof_field_2(), "field_2");
+    let instance = FieldPubNamedStruct::new(10);
+    assert_eq!(instance.field_2, 10);
 }
 
 #[test]
 fn nameof_pub_field_named_struct() {
-    assert_eq!(PubFieldNamedStruct::nameof_field_3(), "field_3");
+    let instance = PubFieldNamedStruct::new(10);
+    assert_eq!(instance.field_3, 10);
 }
 
 #[test]
 fn nameof_pub_field_pub_named_struct() {
-    assert_eq!(PubFieldPubNamedStruct::nameof_field_4(), "field_4");
+    let instance = PubFieldPubNamedStruct::new(10);
+    assert_eq!(instance.field_4, 10);
 }
