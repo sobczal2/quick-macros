@@ -1,8 +1,8 @@
 [package]
 name = "quick-macros"
-version = "0.1.1"
-edition = "2021"
-authors = ["sobczal"]
+version = "0.1.2"
+edition = "2024"
+authors = ["Łukasz Sobczak"]
 license = "MIT"
 description = "Crate providing simple useful macros"
 repository = "https://github.com/sobczal2/quick-macros"
